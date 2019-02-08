@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const bcrypt = require('bcrypt-nodejs');
 
 const app = express();
 
@@ -80,4 +81,4 @@ app.put('/image', (req, res) => {
   }
 })
 
-app.listen(3000)
+app.listen(3001)
