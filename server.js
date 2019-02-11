@@ -12,9 +12,9 @@ const db = knex({
   client: 'pg',
   connection: {
     host : '127.0.0.1',
-    user : '',
+    user : 'postgres',
     password : 'Mcgrady1.',
-    database : 'recognizeme'
+    database : 'postgres'
   }
 });
 
@@ -41,4 +41,6 @@ app.put('/image', (req, res) => { image.handleImage(req,res,db)})
 
 app.post('/imageurl', (req, res) => { image.handleApiCall(req,res)})
 
-app.listen(3001)
+app.listen(process.env.PORT, () => {
+  console.log(`app is running on ${process.env.PORT}`)
+})
